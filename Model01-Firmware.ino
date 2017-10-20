@@ -131,14 +131,16 @@ const Key keymaps[][ROWS][COLS] PROGMEM = {
    Key_Backtick, Key_Q, Key_W, Key_E, Key_R, Key_T, Key_Tab,
    Key_PageUp,   Key_A, Key_S, Key_D, Key_F, Key_G,
    Key_PageDown, Key_Z, Key_X, Key_C, Key_V, Key_B, Key_Escape,
-   Key_LeftControl, Key_Backspace, Key_LeftGui, Key_LeftShift,
+   Key_LeftShift, Key_Backspace, Key_LeftControl, Key_LeftAlt,
+   // Key_LeftControl, Key_Backspace, Key_LeftShift, Key_LeftAlt,
    ShiftToLayer(FUNCTION),
 
-   M(MACRO_ANY),  Key_6, Key_7, Key_8,     Key_9,         Key_0,         Key_KeypadNumLock,
+   Key_RightAlt,  Key_6, Key_7, Key_8,     Key_9,         Key_0,         Key_KeypadNumLock,
    Key_Enter,     Key_Y, Key_U, Key_I,     Key_O,         Key_P,         Key_Equals,
                   Key_H, Key_J, Key_K,     Key_L,         Key_Semicolon, Key_Quote,
-   Key_RightAlt,  Key_N, Key_M, Key_Comma, Key_Period,    Key_Slash,     Key_Minus,
-   Key_RightShift, Key_LeftAlt, Key_Spacebar, Key_RightControl,
+   Key_LeftGui,   Key_N, Key_M, Key_Comma, Key_Period,    Key_Slash,     Key_Minus,
+   // Key_LeftAlt, Key_RightShift, Key_Spacebar, Key_RightControl,
+   Key_LeftAlt, Key_RightControl, Key_Spacebar, Key_RightShift,
    ShiftToLayer(FUNCTION)),
 
   [FUNCTION] =  KEYMAP_STACKED
@@ -247,7 +249,9 @@ static kaleidoscope::LEDSolidColor solidBlue(0, 70, 130);
 static kaleidoscope::LEDSolidColor solidIndigo(0, 0, 170);
 static kaleidoscope::LEDSolidColor solidViolet(130, 0, 120);
 
-
+static kaleidoscope::LEDSolidColor solidDimWhite(96, 96, 96);
+static kaleidoscope::LEDSolidColor solidMagenta(96, 0, 96);
+static kaleidoscope::LEDSolidColor solidBurgundy(100, 0, 27);
 
 /** The 'setup' function is one of the two standard Arduino sketch functions.
   * It's called when your keyboard first powers up. This is where you set up
@@ -263,7 +267,7 @@ void setup() {
   // added in the order they're listed here.
   Kaleidoscope.use(
     // The boot greeting effect pulses the LED button for 10 seconds after the keyboard is first connected
-    &BootGreetingEffect,
+    // &BootGreetingEffect,
 
     // The hardware test mode, which can be invoked by tapping Prog, LED and the left Fn button at the same time.
     &TestMode,
@@ -271,12 +275,12 @@ void setup() {
     // LEDControl provides support for other LED modes
     &LEDControl,
 
-    // We start with the LED effect that turns off all the LEDs.
-    &LEDOff,
+    &solidMagenta,
+    &solidDimWhite,
 
     // The rainbow effect changes the color of all of the keyboard's keys at the same time
     // running through all the colors of the rainbow.
-    &LEDRainbowEffect,
+    // &LEDRainbowEffect,
 
     // The rainbow wave effect lights up your keyboard with all the colors of a rainbow
     // and slowly moves the rainbow across your keyboard
@@ -284,20 +288,21 @@ void setup() {
 
     // The chase effect follows the adventure of a blue pixel which chases a red pixel across
     // your keyboard. Spoiler: the blue pixel never catches the red pixel
-    &LEDChaseEffect,
+    // &LEDChaseEffect,
 
     // These static effects turn your keyboard's LEDs a variety of colors
-    &solidRed, &solidOrange, &solidYellow, &solidGreen, &solidBlue, &solidIndigo, &solidViolet,
+    // &solidRed, &solidOrange, &solidYellow, &solidGreen, &solidBlue, &solidIndigo, &solidViolet,
 
     // The breathe effect slowly pulses all of the LEDs on your keyboard
-    &LEDBreatheEffect,
+    // &LEDBreatheEffect,
 
     // The AlphaSquare effect prints each character you type, using your
     // keyboard's LEDs as a display
-    &AlphaSquareEffect,
+    // &AlphaSquareEffect,
 
     // The stalker effect lights up the keys you've pressed recently
     &StalkerEffect,
+    &LEDOff,
 
     // The numlock plugin is responsible for lighting up the 'numpad' mode
     // with a custom LED effect
