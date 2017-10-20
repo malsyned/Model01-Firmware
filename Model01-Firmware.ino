@@ -251,6 +251,8 @@ static kaleidoscope::LEDSolidColor solidViolet(130, 0, 120);
 
 static kaleidoscope::LEDSolidColor solidDimWhite(96, 96, 96);
 static kaleidoscope::LEDSolidColor solidMagenta(96, 0, 96);
+static kaleidoscope::LEDSolidColor solidWarmWhite(127, 91, 34);
+static kaleidoscope::LEDSolidColor solidHotPurple(100, 50, 110);
 static kaleidoscope::LEDSolidColor solidBurgundy(100, 0, 27);
 
 /** The 'setup' function is one of the two standard Arduino sketch functions.
@@ -275,8 +277,10 @@ void setup() {
     // LEDControl provides support for other LED modes
     &LEDControl,
 
-    &solidMagenta,
-    &solidDimWhite,
+    // &solidMagenta,
+    // &solidDimWhite,
+    &solidHotPurple,
+    &solidWarmWhite,
 
     // The rainbow effect changes the color of all of the keyboard's keys at the same time
     // running through all the colors of the rainbow.
