@@ -132,14 +132,12 @@ const Key keymaps[][ROWS][COLS] PROGMEM = {
    Key_PageUp,   Key_A, Key_S, Key_D, Key_F, Key_G,
    Key_PageDown, Key_Z, Key_X, Key_C, Key_V, Key_B, Key_Escape,
    Key_LeftShift, Key_Backspace, Key_LeftControl, Key_LeftAlt,
-   // Key_LeftControl, Key_Backspace, Key_LeftShift, Key_LeftAlt,
    ShiftToLayer(FUNCTION),
 
    Key_RightAlt,  Key_6, Key_7, Key_8,     Key_9,         Key_0,         Key_KeypadNumLock,
    Key_Enter,     Key_Y, Key_U, Key_I,     Key_O,         Key_P,         Key_Equals,
                   Key_H, Key_J, Key_K,     Key_L,         Key_Semicolon, Key_Quote,
    Key_LeftGui,   Key_N, Key_M, Key_Comma, Key_Period,    Key_Slash,     Key_Minus,
-   // Key_LeftAlt, Key_RightShift, Key_Spacebar, Key_RightControl,
    Key_LeftAlt, Key_RightControl, Key_Spacebar, Key_RightShift,
    ShiftToLayer(FUNCTION)),
 
@@ -151,10 +149,10 @@ const Key keymaps[][ROWS][COLS] PROGMEM = {
    ___, Key_Delete, ___, ___,
    ___,
 
-   Consumer_ScanPreviousTrack, Key_F6,                 Key_F7,                   Key_F8,                   Key_F9,          Key_F10,          Key_F11,
-   Consumer_PlaySlashPause,    Consumer_ScanNextTrack, Key_LeftCurlyBracket,     Key_RightCurlyBracket,    Key_LeftBracket, Key_RightBracket, Key_F12,
+   Consumer_VolumeIncrement,   Key_F6,                 Key_F7,                   Key_F8,                   Key_F9,          Key_F10,          Key_F11,
+   Consumer_VolumeDecrement,   Key_Mute,               Key_LeftCurlyBracket,     Key_RightCurlyBracket,    Key_LeftBracket, Key_RightBracket, Key_F12,
                                Key_LeftArrow,          Key_DownArrow,            Key_UpArrow,              Key_RightArrow,  ___,              ___,
-   Key_PcApplication,          Key_Mute,               Consumer_VolumeDecrement, Consumer_VolumeIncrement, ___,             Key_Backslash,    Key_Pipe,
+   Key_PcApplication,          Key_Mute,               Key_LeftArrow,            Key_DownArrow,            Key_RightArrow,  Key_Backslash,    Key_Pipe,
    ___, ___, Key_Enter, ___,
    ___),
 
